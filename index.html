@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>アンケート？</title>
-    <script type="text/javascript" src="./formCheck0724.js"></script>
+    <script type="text/javascript" src="formCheck0724.js"></script>
   </head>
   <body>
     <form name="anke">
@@ -79,16 +79,3 @@
     </form>
   </body>
 </html>
-<!--HTMLコードの仕様
-１．フォームエレメントのクラス名は、class="elem"にしすべてにつける。
-２．フォームエレメントには、data-xxxxxを付け、xxxxxはtype属性の値と同じにする。
-　　ラジオボタンやチェックボックスなどで同一グループは、最初に現れるエレメントだけにdata-radio、data-checkboxを付ける。
-　　type属性が存在しない場合は、タグ名にする。ただし、セレクトボックスは、data-selectbox、リストボックスは、data-listboxにする。
-　　data-xxxxxの値は、"a,b"にする。aは、同じグループのフォームエレメントの数（ラジオボタンが２つの場合は、２、チェックボックスが５つの場合は、５）
-　　bは、必要とするチェック数の指定。ラジオボタンは、通常０を指定、チェックボックスは、必要チェック数を書く。
-３．一つのグループのフォームエレメントに必ずメッセージ表示の<span class="erMsg" data-error="※どちらかをチェックしてください。,1,red"></span>を付ける。
-　　クラス名は、class="erMsg"にする。
-　　data-error="メッセージ,c,color"のcは、必須入力の時は、「１」、そうでない場合は、「０」を設定する。
-　　colorは、メッセージ表示の色を指定する。
-　　<span class="erMsg" data-error=""></span>のdata-error=""が空文字のときは、メッセージを表示しない。
--->
