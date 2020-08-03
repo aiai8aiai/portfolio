@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>アンケート？</title>
+    <script type="text/javascript" src="../js/formCheck0724.js"></script>
+  </head>
+  <body>
+    <form name="anke">
+      投稿日：
+      <input class="elem" data-date="1,0" type="date" name="date">
+      <span class="erMsg" id="er_date" data-error="※投稿日を選んでください。,1,red"></span><br>
+      時間：
+      <input class="elem" data-time="1,0" type="time" name="time">
+      <span class="erMsg" id="er_time" data-error="※投稿時間を選んでください。,0,green"></span><br>
+      氏名：
+      <input class="elem" data-text="1,0" type="text" name="name">
+      <span class="erMsg" id="er_name" data-error="※氏名を入力してください。,1,red"></span><br>
+      eMail：
+      <input class="elem" data-text="1,0" type="text" name="eMail">
+      <span class="erMsg" id="er_eMail" data-error="※メールアドレスを入力してください。,1,red"></span><br>
+      性別：
+      <label><input class="elem" data-radio="2,0" type="radio" name="seibetsu" value="女">女</label>
+      <label><input class="elem"                  type="radio" name="seibetsu" value="男">男</label>
+      <span class="erMsg" id="er_seibetsu" data-error="※性別をチェックしてください。,1,red"></span><br>
+      趣味（二つ以上チェックしてください。）：<br>
+      <label><input class="elem" data-checkbox="5,2" type="checkbox" name="hobby[]" value="パソコン">パソコン</label>
+      <label><input class="elem"                     type="checkbox" name="hobby[]" value="読書">読書</label>
+      <label><input class="elem"                     type="checkbox" name="hobby[]" value="旅行">旅行</label>
+      <label><input class="elem"                     type="checkbox" name="hobby[]" value="釣り">釣り</label>
+      <label><input class="elem"                     type="checkbox" name="hobby[]" value="寝る">寝る</label>
+      <span class="erMsg" id="er_hobby" data-error="※趣味を二つ以上チェックしてください。,1,red"></span><br>
+      出身地：
+      <select class="elem" data-selectbox="1,0" name="birthplace">
+        <option value="">出身地を選んでください。</option>
+        <option value="大阪府">大阪府</option>
+        <option value="兵庫県">兵庫県</option>
+        <option value="中国">中国</option>
+        <option value="ベトナム">ベトナム</option>
+        <option value="インド">インド</option>
+        <option value="ミャンマー">ミャンマー</option>
+      </select>
+      <span class="erMsg" id="er_birthplace" data-error="※出身地を選んでください。,1,red"></span><br>
+      好きな地域（複数選択可）：
+      <select class="elem" data-listbox="1,0" name="favoriteArea[]" size="3" multiple>
+        <option value="北海道">北海道</option>
+        <option value="大阪府">大阪府</option>
+        <option value="兵庫県">兵庫県</option>
+        <option value="中国">中国</option>
+        <option value="ベトナム">ベトナム</option>
+        <option value="インド">インド</option>
+        <option value="ミャンマー">ミャンマー</option>
+      </select>
+      <span class="erMsg" id="er_favoriteArea" data-error="※好きな地域を選んでください。,1,red"></span><br>
+      問い合わせ：
+      <textarea class="elem" data-textarea="1,0" name="inquiry"></textarea>
+      <span class="erMsg" id="er_inquiry" data-error="※お知りになりたいことお問い合わせください。,0,green"></span><br>
+      ご意見：
+      <textarea class="elem" data-textarea="1,0" name="opinion"></textarea>
+      <span class="erMsg" id="er_opinion" data-error="※意見があればお願いします。,0,green"></span><br>
+      電話番号:
+      <input class="elem" data-text="1,0" type="text" name="tel">
+      <span class="erMsg" id="er_tel" data-error="※電話番号を入力してください。,1,red"></span><br>
+      携帯番号：
+      <input class="elem" data-text="1,0" type="text" name="mobile">
+      <span class="erMsg" id="er_mobile" data-error="※携帯の電話番号を入力してください。,1,red"></span><br>
+      どちらが好きですか？：
+      <label><input class="elem" data-radio="5,0" type="radio" name="like" value="山">山</label>
+      <label><input class="elem"                  type="radio" name="like" value="海">海</label>
+      <label><input class="elem"                  type="radio" name="like" value="川">川</label>
+      <label><input class="elem"                  type="radio" name="like" value="海">海</label>
+      <label><input class="elem"                  type="radio" name="like" value="川">川</label>
+      <span class="erMsg" id="er_like" data-error="※好きなものをチェックしてください。,0,green"></span><br>
+      あなたはペットを飼っていますか？：
+      <label><input class="elem" data-radio="2,0" type="radio" name="pet" value="はい">はい</label>
+      <label><input class="elem"                  type="radio" name="pet" value="いいえ">いいえ</label>
+      <span class="erMsg" id="er_pet" data-error="※どちらかをチェックしてください。,1,red"></span><br>
+      <input type="button" id="confirmation" value="確認" onclick="window.formcheck();">
+    </form>
+  </body>
+</html>
+<!--HTMLコードの仕様
+１．フォームエレメントのクラス名は、class="elem"にしすべてにつける。
+２．フォームエレメントには、data-xxxxxを付け、xxxxxはtype属性の値と同じにする。
+　　ラジオボタンやチェックボックスなどで同一グループは、最初に現れるエレメントだけにdata-radio、data-checkboxを付ける。
+　　type属性が存在しない場合は、タグ名にする。ただし、セレクトボックスは、data-selectbox、リストボックスは、data-listboxにする。
+　　data-xxxxxの値は、"a,b"にする。aは、同じグループのフォームエレメントの数（ラジオボタンが２つの場合は、２、チェックボックスが５つの場合は、５）
+　　bは、必要とするチェック数の指定。ラジオボタンは、通常０を指定、チェックボックスは、必要チェック数を書く。
+３．一つのグループのフォームエレメントに必ずメッセージ表示の<span class="erMsg" data-error="※どちらかをチェックしてください。,1,red"></span>を付ける。
+　　クラス名は、class="erMsg"にする。
+　　data-error="メッセージ,c,color"のcは、必須入力の時は、「１」、そうでない場合は、「０」を設定する。
+　　colorは、メッセージ表示の色を指定する。
+　　<span class="erMsg" data-error=""></span>のdata-error=""が空文字のときは、メッセージを表示しない。
+-->
